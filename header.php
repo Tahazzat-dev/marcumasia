@@ -46,7 +46,7 @@
 									'container' => false,
 								));?>
 							
-							<li class="search-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/search-icon.png" alt="">Search</a></li>
+							<li class="search-btn"><a href="#" ><img src="<?php echo get_template_directory_uri(); ?>/assets/img/search-icon.png" alt="">Search</a></li>
                         </nav>
                     </div>
                 </div>

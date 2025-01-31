@@ -59,7 +59,8 @@ if (!empty($content_section)) :
                         <p><?php echo $content_section['sub_title']; ?></p>
                     </div>
                     <div class="right-content">
-                        <img src="<?php echo $content_section['icon']; ?>" alt="">
+
+                        <img src="<?php echo $content_section['icon']['url']; ?>" alt="polygon icon">
                       <p><?php echo wp_kses_post($content_section['content']); ?></p>
                         <div class="cta-wrap">
 <a href="<?php echo $content_section['cta_url']; ?>" class="btn why-btn">
