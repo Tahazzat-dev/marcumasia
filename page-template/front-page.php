@@ -96,7 +96,8 @@ if (!empty($location)) :
                     <div class="bullet-btn">
                         <a href="<?php echo $location['cta_url']; ?>" class="btn-tablet"><?php echo $location['cta']; ?></a>
                     </div>
-                    <div class="location-info">
+                   <div class="location-info-wrap">
+                   <div class="location-info">
                         <div class="location-content">
                             <?php echo wp_kses_post ($location['content']); ?>
                             <div class="location-btn">
@@ -120,6 +121,7 @@ if (!empty($location)) :
                         
                     </div>
                     </div>
+                   </div>
 
                 </div>
 
@@ -138,9 +140,12 @@ if (!empty($slider)) :
 
 <section class="slider-wrap">
     <div class="slider-thubmb">
-         <img src="<?php echo $slider['slider_thumb']['url'];?>" alt="">
+         <img class="hoverable-slider-thum" data-index="0" src="<?php echo $slider['slider_thumb_first']['url'];?>" alt="">
+         <img class="hoverable-slider-thum"  data-index="1" style="display:none;" src="<?php echo $slider['slider_thumb_second']['url'];?>" alt="">
+         <img class="hoverable-slider-thum" data-index="2" style="display:none;" src="<?php echo $slider['slider_thumb_third']['url'];?>" alt="">
+         <img class="hoverable-slider-thum" data-index="3" style="display:none;" src="<?php echo $slider['slider_thumb_fourth']['url'];?>" alt="">
     </div>
-    <div class="common-wrap clear">
+    <div id="bullet-btn-common-wrap" class="common-wrap clear">
         <div class="bullet-btn">
             <a href="<?php echo $slider['cta_url']; ?>" class="btn-tablet"><?php echo $slider['cta']; ?></a>
         </div>
@@ -150,9 +155,9 @@ if (!empty($slider)) :
           <?php
 $slider_item = $slider['slider_item'];
 if (!empty($slider_item)) :
-    foreach ($slider_item as $item) : // Renamed the loop variable to $item
+    foreach ($slider_item as $key=> $item) : // Renamed the loop variable to $item
         ?>
-        <div class="slide">
+        <div data-index="<?php echo esc_attr($key); ?>" class="slide hoverable-slider">
             <div class="content">
                <div class="content-inner">
                <h3><?php echo $item['title']; ?></h3>
