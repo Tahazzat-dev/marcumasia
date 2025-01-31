@@ -60,8 +60,8 @@ if (!empty($content_section)) :
                     </div>
                     <div class="right-content">
 
-                        <img src="<?php echo $content_section['icon']['url']; ?>" alt="polygon icon">
-                      <p><?php echo wp_kses_post($content_section['content']); ?></p>
+                        <img class="polygon-img" src="<?php echo $content_section['icon']['url']; ?>" alt="polygon icon">
+                     <?php echo wp_kses_post($content_section['content']); ?>
                         <div class="cta-wrap">
 <a href="<?php echo $content_section['cta_url']; ?>" class="btn why-btn">
     <img src="<?php echo $content_section['cta_icon']['url'];?>" alt="">
@@ -98,11 +98,11 @@ if (!empty($location)) :
                     </div>
                     <div class="location-info">
                         <div class="location-content">
-                            <h2><?php echo wp_kses_post ($location['content']); ?></h2>
+                            <?php echo wp_kses_post ($location['content']); ?>
                             <div class="location-btn">
                                <a href="<?php echo $content_section['cta_url']; ?>" class="btn why-btn">
-    <img src="<?php echo $content_section['cta_icon']['url'];?>" alt="">
-    <?php echo $content_section['cta']; ?>
+    <img src="<?php echo $location['cta_icon']['url'];?>" alt="Rounded arrow icon">
+     <span>LOCATIONS</span>
 </a>
                             </div>
                         </div>
@@ -154,9 +154,12 @@ if (!empty($slider_item)) :
         ?>
         <div class="slide">
             <div class="content">
-                <h3><?php echo $item['title']; ?></h3>
+               <div class="content-inner">
+               <h3><?php echo $item['title']; ?></h3>
                 <div class="bio-contact-content">
-                    <p><?php echo wp_kses_post ($item['content']); ?></p>
+                    <div class="paragraph-container">
+                    <?php echo wp_kses_post ($item['content']); ?>
+                    </div>
                     <div class="learn-btn">
                         <a href="<?php echo $item['url_cta']; ?>" class="btn why-btn">
                          <img src="<?php echo $item['btn_icon']['url'];?>" alt="">
@@ -164,6 +167,7 @@ if (!empty($slider_item)) :
                       </a>
                     </div>
                 </div>
+               </div>
             </div>
         </div>
     <?php endforeach; endif; ?>
@@ -257,7 +261,7 @@ if (!empty($career)) :
 				
 <section class="career-cta-wrap">
 <div class="cta-banner">
-    <img src="<?php echo $career['banner_thumb']['url'];?>" alt="">
+    <img  src="<?php echo $career['banner_thumb']['url'];?>" alt="">
 </div>
 <div class="common-wrap clear">
 <div class="career-inner">
